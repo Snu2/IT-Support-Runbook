@@ -1,116 +1,115 @@
-# IT Support Troubleshooting Runbook
+# IT Support Runbook
 
-A practical reference guide documenting common IT support and networking issues, their root causes, and step-by-step resolution procedures — built the way real support teams document their workflows.
+A practical, self-built knowledge base documenting IT support and networking concepts, troubleshooting procedures, and command references — organized the way real support teams structure their internal documentation.
+
+This project was created as a hands-on learning exercise to deepen and demonstrate practical knowledge across networking, Windows, Linux, and security fundamentals.
+
+---
 
 ## Purpose
 
-This runbook serves as a quick-reference guide for diagnosing and resolving the most frequent issues faced in IT support and networking environments. It's designed to speed up troubleshooting by providing a clear, repeatable process for each problem.
+This runbook serves two goals:
+1. **A personal reference** for continuous learning and quick lookup while studying IT support and networking.
+2. **A demonstration of practical, organized technical knowledge** — built and maintained entirely through Git and GitHub.
 
 ---
 
-## Common Issues & Resolutions
+## Structure
 
-### 1. User Cannot Connect to Wi-Fi
-
-**Symptoms:** Device shows "no internet" or fails to connect to the wireless network.
-
-**Diagnosis steps:**
-1. Confirm the correct network (SSID) is selected
-2. Verify the Wi-Fi password is correct
-3. Check if other devices can connect to the same network
-4. Restart the router/access point
-5. Forget the network on the device and reconnect
-6. Check if DHCP is assigning an IP address correctly
-
-**Resolution:** If steps 1–5 don't resolve it, check the router's DHCP pool for available addresses, or manually assign a static IP to test connectivity.
+```
+IT-Support-Runbook/
+├── Networking/       Core networking concepts
+├── Windows/          Windows administration topics
+├── Linux/            Linux administration topics
+├── Security/         Security fundamentals and incident response
+├── Troubleshooting/  Step-by-step diagnostic playbooks
+└── Commands/         Quick command-line references
+```
 
 ---
 
-### 2. Slow Network Performance
+## Networking
 
-**Symptoms:** Pages load slowly, file transfers take longer than expected, video calls lag.
+Fundamentals of how networks operate.
 
-**Diagnosis steps:**
-1. Run `ping` to test basic connectivity and latency
-2. Run `tracert` (Windows) or `traceroute` (Mac/Linux) to identify where delays occur
-3. Check bandwidth usage — are multiple devices/users saturating the connection?
-4. Test with a wired connection to rule out Wi-Fi interference
-5. Check for background applications consuming bandwidth
-
-**Resolution:** Identify the bottleneck (ISP, router, local network congestion) and address accordingly — may require QoS configuration or upgrading bandwidth.
-
----
-
-### 3. Network Printer Not Printing
-
-**Symptoms:** Print jobs stuck in queue, printer shows offline, or nothing happens when printing.
-
-**Diagnosis steps:**
-1. Confirm the printer is powered on and connected to the network
-2. Ping the printer's IP address to confirm it's reachable
-3. Check the print queue for stuck jobs — clear and retry
-4. Verify the correct printer driver is installed
-5. Restart the print spooler service (Windows: `services.msc` → Print Spooler)
-
-**Resolution:** Reinstall printer drivers if outdated, or re-add the printer using its correct IP/hostname.
-
----
-
-### 4. Cannot Access a Specific Website or Service
-
-**Symptoms:** One site/service fails to load while others work fine.
-
-**Diagnosis steps:**
-1. Try accessing the site from a different device/network to isolate the issue
-2. Run `nslookup <domain>` to check DNS resolution
-3. Clear DNS cache (`ipconfig /flushdns` on Windows)
-4. Check if a firewall or proxy is blocking the site
-5. Test using a different DNS server (e.g., 8.8.8.8)
-
-**Resolution:** If DNS resolution fails, update DNS settings. If blocked by firewall/proxy, escalate to network admin for a policy review.
-
----
-
-### 5. VPN Connection Issues
-
-**Symptoms:** VPN fails to connect, disconnects randomly, or blocks internet access once connected.
-
-**Diagnosis steps:**
-1. Verify credentials and VPN server address are correct
-2. Check internet connectivity without VPN first
-3. Restart the VPN client
-4. Check for conflicting network adapters or firewall rules
-5. Review VPN logs for specific error codes
-
-**Resolution:** Reinstall VPN client if corrupted, or contact VPN provider/admin if the issue is server-side.
-
----
-
-## Essential Networking Commands
-
-| Command | Purpose |
+| File | Covers |
 |---|---|
-| `ping <host>` | Tests basic connectivity and measures latency to a host |
-| `ipconfig` / `ifconfig` | Displays network configuration (IP, subnet, gateway) |
-| `tracert` / `traceroute` | Shows the path packets take to reach a destination, useful for locating delays |
-| `nslookup <domain>` | Queries DNS to resolve a domain name to an IP address |
-| `netstat` | Displays active network connections and listening ports |
-| `ipconfig /flushdns` | Clears the local DNS cache |
+| [WiFi.md](Networking/WiFi.md) | Wi-Fi standards, security protocols, key concepts |
+| [DNS.md](Networking/DNS.md) | How DNS resolution works, record types |
+| [DHCP.md](Networking/DHCP.md) | The DORA lease process, scopes, reservations |
+| [Routing.md](Networking/Routing.md) | Routing tables, static vs. dynamic routing |
+| [Connectivity.md](Networking/Connectivity.md) | Layered approach to diagnosing connectivity |
 
 ---
 
-## Key Networking Concepts
+## Windows
 
-- **DNS (Domain Name System):** Translates human-readable domain names (e.g., google.com) into IP addresses.
-- **DHCP (Dynamic Host Configuration Protocol):** Automatically assigns IP addresses to devices on a network.
-- **Subnet:** A logical subdivision of a network, used to organize and manage IP address ranges.
-- **Gateway:** The device (usually a router) that connects a local network to external networks like the internet.
-- **Firewall:** A security system that monitors and controls incoming/outgoing network traffic based on defined rules.
+Windows administration and support topics.
+
+| File | Covers |
+|---|---|
+| [User-Accounts.md](Windows/User-Accounts.md) | Account types, local vs. domain, lockouts |
+| [Services.md](Windows/Services.md) | How Windows services work, startup types |
+| [Printers.md](Windows/Printers.md) | Print Spooler, drivers, common print issues |
+| [Performance.md](Windows/Performance.md) | CPU/memory/disk bottlenecks, diagnostic tools |
+
+---
+
+## Linux
+
+Linux administration and support topics.
+
+| File | Covers |
+|---|---|
+| [Networking.md](Linux/Networking.md) | Linux network config files and tools |
+| [Permissions.md](Linux/Permissions.md) | File permissions, ownership, chmod/chown |
+| [Services.md](Linux/Services.md) | systemd services, unit files, journalctl |
+
+---
+
+## Security
+
+Security fundamentals and incident response basics.
+
+| File | Covers |
+|---|---|
+| [Endpoint.md](Security/Endpoint.md) | Endpoint protection tools and concepts |
+| [Phishing.md](Security/Phishing.md) | Phishing types, red flags, response steps |
+| [Malware.md](Security/Malware.md) | Malware types, infection signs, response |
+| [Account-Compromise.md](Security/Account-Compromise.md) | Detecting and responding to compromised accounts |
+
+---
+
+## Troubleshooting
+
+Step-by-step diagnostic playbooks for common real-world issues.
+
+| File | Covers |
+|---|---|
+| [WiFi.md](Troubleshooting/WiFi.md) | Diagnosing Wi-Fi connection failures/drops |
+| [VPN.md](Troubleshooting/VPN.md) | Diagnosing VPN connection issues |
+| [DNS.md](Troubleshooting/DNS.md) | Diagnosing DNS resolution failures |
+| [Slow-Network.md](Troubleshooting/Slow-Network.md) | Diagnosing slow network performance |
+
+---
+
+## Commands
+
+Quick command-line references by platform.
+
+| File | Covers |
+|---|---|
+| [Windows.md](Commands/Windows.md) | Windows CMD/PowerShell commands |
+| [Linux.md](Commands/Linux.md) | Linux shell commands |
+| [Network.md](Commands/Network.md) | Cross-platform networking commands with a diagnostic workflow |
 
 ---
 
 ## About This Project
 
-This runbook was built as a hands-on learning project to document real-world IT support troubleshooting workflows. It reflects a structured, methodical approach to diagnosing and resolving common technical issues.
+This runbook is continuously updated as new topics are learned and documented. It's structured so that:
+- **Reference files** (Networking, Windows, Linux, Security) explain how things work
+- **Troubleshooting files** link back to reference files and focus purely on diagnosis and resolution steps
+- **Command files** serve as a fast lookup without needing to search through longer explanations
 
-*Continuously updated as new issues and solutions are documented.*
+Built entirely from a mobile device using the GitHub app, as part of a self-driven learning process into IT support and networking.
