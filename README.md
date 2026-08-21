@@ -1,8 +1,8 @@
 # IT Support Runbook
 
-A practical, self-built knowledge base documenting IT support and networking concepts, troubleshooting procedures, and command references — organized the way real support teams structure their internal documentation.
+A practical, self-built knowledge base documenting IT support and networking concepts, troubleshooting procedures, diagnostic tools, and command references — organized the way real support teams structure their internal documentation.
 
-This project was created as a hands-on learning exercise to deepen and demonstrate practical knowledge across networking, Windows, Linux, and security fundamentals.
+This project was created as a hands-on learning exercise to deepen and demonstrate practical knowledge across networking, Windows, Linux, security, and diagnostic tooling.
 
 ---
 
@@ -23,7 +23,8 @@ IT-Support-Runbook/
 ├── Linux/            Linux administration topics
 ├── Security/         Security fundamentals and incident response
 ├── Troubleshooting/  Step-by-step diagnostic playbooks
-└── Commands/         Quick command-line references
+├── Commands/         Quick command-line references
+└── Tools/            Diagnostic and analysis tools
 ```
 
 ---
@@ -105,11 +106,23 @@ Quick command-line references by platform.
 
 ---
 
+## Tools
+
+Diagnostic and analysis tools used in real-world IT and network troubleshooting.
+
+| File | Covers |
+|---|---|
+| [Wireshark.md](Tools/Wireshark.md) | Packet capture, display filters, traffic analysis |
+| [Nmap.md](Tools/Nmap.md) | Network scanning, port discovery, service detection |
+
+---
+
 ## About This Project
 
 This runbook is continuously updated as new topics are learned and documented. It's structured so that:
 - **Reference files** (Networking, Windows, Linux, Security) explain how things work
 - **Troubleshooting files** link back to reference files and focus purely on diagnosis and resolution steps
 - **Command files** serve as a fast lookup without needing to search through longer explanations
+- **Tools files** cover real diagnostic software used alongside built-in commands
 
 Built entirely from a mobile device using the GitHub app, as part of a self-driven learning process into IT support and networking.
