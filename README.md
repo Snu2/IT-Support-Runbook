@@ -18,14 +18,23 @@ This runbook serves two goals:
 
 ```
 IT-Support-Runbook/
-├── Networking/       Core networking concepts
-├── Windows/          Windows administration topics
-├── Linux/            Linux administration topics
-├── Security/         Security fundamentals and incident response
-├── Troubleshooting/  Step-by-step diagnostic playbooks
-├── Commands/         Quick command-line references
-└── Tools/            Diagnostic and analysis tools
+├── IT-Support-Methodology.md   How enterprise IT support actually operates
+├── Networking/                 Core networking concepts
+├── Windows/                    Windows administration topics
+├── Linux/                      Linux administration topics
+├── Security/                   Security fundamentals and incident response
+├── Troubleshooting/            Step-by-step diagnostic playbooks
+├── Commands/                   Quick command-line references
+└── Tools/                      Diagnostic and analysis tools
 ```
+
+---
+
+## Troubleshooting Methodology
+
+This runbook isn't just a list of commands — every issue in [Troubleshooting/](Troubleshooting/) follows a consistent diagnostic process: identify the problem, gather information from both the user and the system, form a theory of probable cause, test that theory before acting, implement the fix, verify it actually worked, and document the outcome.
+
+The full methodology — including how this applies in real support environments (ticketing, SLAs, support tiers) — is documented in [IT-Support-Methodology.md](IT-Support-Methodology.md).
 
 ---
 
@@ -40,6 +49,8 @@ Fundamentals of how networks operate.
 | [DHCP.md](Networking/DHCP.md) | The DORA lease process, scopes, reservations |
 | [Routing.md](Networking/Routing.md) | Routing tables, static vs. dynamic routing |
 | [Connectivity.md](Networking/Connectivity.md) | Layered approach to diagnosing connectivity |
+| [IP-Addressing.md](Networking/IP-Addressing.md) | IPv4 vs. IPv6, MAC addresses, private ranges |
+| [Network-Hardware.md](Networking/Network-Hardware.md) | Routers, switches, modems, fiber, cell towers, satellites |
 
 ---
 
@@ -117,6 +128,12 @@ Diagnostic and analysis tools used in real-world IT and network troubleshooting.
 
 ---
 
+## Screenshots
+
+Practical, hands-on screenshots (command output, tool usage) will be added incrementally as they're captured, organized under a `Screenshots/` subfolder inside the relevant section (e.g., `Networking/Screenshots/`, `Tools/Screenshots/`). This section will be updated as that content is added.
+
+---
+
 ## About This Project
 
 This runbook is continuously updated as new topics are learned and documented. It's structured so that:
@@ -124,5 +141,6 @@ This runbook is continuously updated as new topics are learned and documented. I
 - **Troubleshooting files** link back to reference files and focus purely on diagnosis and resolution steps
 - **Command files** serve as a fast lookup without needing to search through longer explanations
 - **Tools files** cover real diagnostic software used alongside built-in commands
+- **IT-Support-Methodology.md** connects all of the above to how support actually operates in a real organization
 
 Built entirely from a mobile device using the GitHub app, as part of a self-driven learning process into IT support and networking.
