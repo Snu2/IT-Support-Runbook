@@ -130,7 +130,7 @@ Diagnostic and analysis tools used in real-world IT and network troubleshooting.
 
 ## Screenshots
 
-Practical, hands-on screenshots (command output, tool usage) will be added incrementally as they're captured, organized under a `Screenshots/` subfolder inside the relevant section (e.g., `Networking/Screenshots/`, `Tools/Screenshots/`). This section will be updated as that content is added.
+Practical, hands-on screenshots are being added as they're captured, organized inside the relevant section's folder (e.g., `Networking/`). The first example — basic network diagnostics run on a Linux lab environment — is documented in [Commands/Network.md](Commands/Network.md#practical-example-linux).
 
 ---
 
@@ -144,4 +144,3 @@ This runbook is continuously updated as new topics are learned and documented. I
 - **IT-Support-Methodology.md** connects all of the above to how support actually operates in a real organization
 
 Built entirely from a mobile device using the GitHub app, as part of a self-driven learning process into IT support and networking.
-
