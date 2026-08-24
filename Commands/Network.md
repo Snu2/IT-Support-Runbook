@@ -56,6 +56,32 @@ This order isolates the problem layer by layer — see [Networking/Connectivity.
 
 ---
 
+## Practical Example (Linux)
+
+Applied example of the diagnostic workflow above, run on a Kali Linux VM configured as a general-purpose lab environment (hostname set to `support-vm`).
+
+**1. Checking IP configuration:**
+
+`ip a` — displays all network interfaces, their assigned IP addresses, and status. MAC address blacked out for privacy.
+
+![ip a output](../Networking/screenshot-ip-a.jpeg)
+
+**2. Testing connectivity:**
+
+`ping -c 4 google.com` — confirms the machine can reach an external host, with 0% packet loss and consistent round-trip times.
+
+![ping output](../Networking/screenshot-ping-google.jpeg)
+
+**3. Confirming DNS resolution:**
+
+`nslookup google.com` — confirms DNS is resolving the domain correctly, returning both IPv4 and IPv6 addresses via the local DNS server.
+
+![nslookup output](../Networking/screenshot-nslookup-google.jpeg)
+
+Together, these three steps confirm all three layers of the [Networking/Connectivity.md](../Networking/Connectivity.md) model are working: local IP configuration, internet reachability, and DNS resolution.
+
+---
+
 ## Related
 
 - [Networking/Connectivity.md](../Networking/Connectivity.md) — the layered diagnostic approach these commands support
