@@ -70,13 +70,13 @@ Applied example of the diagnostic workflow above, run on a Kali Linux VM configu
 
 `ping -c 4 google.com` — confirms the machine can reach an external host, with 0% packet loss and consistent round-trip times.
 
-![ping output](../Networking/screenshot-ping-google.jpeg)
+![nslookup output](../Networking/screenshot-nslookup-google.jpeg)
 
 **3. Confirming DNS resolution:**
 
 `nslookup google.com` — confirms DNS is resolving the domain correctly, returning both IPv4 and IPv6 addresses via the local DNS server.
 
-![nslookup output](../Networking/screenshot-nslookup-google.jpeg)
+![ping output](../Networking/screenshot-ping-google.jpeg)
 
 Together, these three steps confirm all three layers of the [Networking/Connectivity.md](../Networking/Connectivity.md) model are working: local IP configuration, internet reachability, and DNS resolution.
 
