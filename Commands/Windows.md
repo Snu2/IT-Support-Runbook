@@ -67,6 +67,39 @@ Quick reference for commonly used Windows command-line tools (Command Prompt / P
 
 ---
 
+## Practical Example (Windows)
+
+Applied example of basic network diagnostics run on a Windows machine (hostname `support-vm`), following the same layered approach described in [Networking/Connectivity.md](../Networking/Connectivity.md).
+
+**1. Checking IP configuration:**
+
+`ipconfig /all` — displays full network configuration for every adapter on the system (Ethernet, Wi-Fi, Bluetooth, virtual adapters). MAC addresses blacked out for privacy.
+
+![ipconfig /all output, part 1](../Networking/screenshot-ipconfig-windows-1.png)
+![ipconfig /all output, part 2](../Networking/screenshot-ipconfig-windows-2.png)
+
+**2. Testing connectivity:**
+
+`ping google.com` — confirms the machine can reach an external host, with 0% packet loss and consistent round-trip times (~100ms average).
+
+![ping output](../Networking/screenshot-ping-windows.png)
+
+**3. Tracing the route:**
+
+`tracert google.com` — shows each hop the connection passes through on its way to Google's servers, illustrating the concept covered in [Networking/Routing.md](../Networking/Routing.md). Note hop 2 timing out — a common and normal occurrence when an intermediate device doesn't respond to ICMP requests.
+
+![tracert output](../Networking/screenshot-tracert-windows.png)
+
+**4. Confirming DNS resolution:**
+
+`nslookup google.com` — confirms DNS is resolving the domain correctly, returning both IPv4 and IPv6 addresses.
+
+![nslookup output](../Networking/screenshot-nslookup-windows.png)
+
+Together, these four steps confirm the same diagnostic layers demonstrated in the [Linux example](Network.md#practical-example-linux), showing the same troubleshooting logic applies across operating systems — only the commands differ.
+
+---
+
 ## Related
 
 - See [Networking](../Networking/) for background on the networking concepts these commands interact with.
