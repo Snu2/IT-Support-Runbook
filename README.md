@@ -130,7 +130,10 @@ Diagnostic and analysis tools used in real-world IT and network troubleshooting.
 
 ## Screenshots
 
-Practical, hands-on screenshots are being added as they're captured, organized inside the relevant section's folder (e.g., `Networking/`). The first example — basic network diagnostics run on a Linux lab environment — is documented in [Commands/Network.md](Commands/Network.md#practical-example-linux).
+Practical, hands-on screenshots are being added as they're captured, organized inside the relevant section's folder (e.g., `Networking/`). Two applied examples are documented so far, showing the same diagnostic workflow across different operating systems:
+
+- **Linux** — basic network diagnostics on a Kali Linux lab environment, in [Commands/Network.md](Commands/Network.md#practical-example-linux)
+- **Windows** — the same diagnostic workflow on Windows, in [Commands/Windows.md](Commands/Windows.md#practical-example-windows)
 
 ---
 
